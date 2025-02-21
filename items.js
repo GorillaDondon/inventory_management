@@ -29,7 +29,8 @@
             const currentStock = parseInt(itemRecord['stock'].value);
             const newStock = orderType === 'Sale' ? currentStock - quantity : currentStock + quantity;
             console.log(currentStock, newStock);
-            
+
+            // update the stock number 
             return kintone.api(kintone.api.url('/k/v1/record', true), 'PUT', {
                 app: itemAppId,
                 id: itemRecord['$id'].value, // Get record ID
